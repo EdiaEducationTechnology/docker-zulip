@@ -37,7 +37,7 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends && \
     chown -R zulip:zulip /home/zulip /var/log/zulip /etc/zulip/settings.py && \
     apt-get -qq autoremove --purge -y && \
     apt-get -qq clean && \
-    rm -rf /root/zulip/puppet/ /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    rm -Rf /root/zulip/puppet/ /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY includes/createZulipRealm.sh /opt/createZulipRealm.sh
 COPY entrypoint.sh /sbin/entrypoint.sh
